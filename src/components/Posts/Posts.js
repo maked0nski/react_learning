@@ -13,7 +13,7 @@ const Posts = () => {
     }, [])
 
     return (
-        <div>
+        <div className={'posts'}>
             <h2>Posts</h2>
 
             {posts.map(value => <Post key={value.id} data={value}/>)}

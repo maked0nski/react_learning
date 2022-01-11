@@ -13,7 +13,7 @@ const Comments = () => {
 
 
     return (
-        <div>
+        <div className={'comments'}>
             <h2>Comments</h2>
             {comments.map(value => <Comment key={comments.id} data={value}/>)}
         </div>

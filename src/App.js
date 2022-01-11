@@ -5,7 +5,7 @@ import Comments from "./components/Comments/Comments";
 
 function App() {
   return (
-    <div className={'item'}>
+    <div className={'container'}>
         <Users/>
         <Posts/>
         <Comments/>
