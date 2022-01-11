@@ -1,7 +1,7 @@
 import React from 'react';
 
 const Comment = (props) => {
-    const {id, postId, name, email, body} = props.data
+    const {data: {id, postId, name, email, body}} = props
     return (
         <div className={'comment'}>
             <div>Id : {id}</div>

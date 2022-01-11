@@ -2,7 +2,7 @@ import React from 'react';
 
 const User = (props) => {
 
-    const {id, name, username, email} = props.data
+    const {data: {id, name, username, email}} = props
 
     return (
         <div className={'user'}>
