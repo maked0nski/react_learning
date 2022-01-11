@@ -8,8 +8,17 @@
     "comments comments";
 }
 
-.users { grid-area: users; }
+.users {
+    grid-area: users;
+}
 
-.posts { grid-area: posts; }
+.posts {
+    grid-area: posts;
+}
 
-.comments { grid-area: comments; }
+.comments {
+    grid-area: comments;
+}
+.user, .post, .comment {
+    margin: 15px;
+}

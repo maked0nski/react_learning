@@ -5,8 +5,11 @@ const User = (props) => {
     const {id, name, username, email} = props.data
 
     return (
-        <div>
-            {id}--{name}--{username}--{email}
+        <div className={'user'}>
+            <div>Id : {id}</div>
+            <div>Name : {name}</div>
+            <div>Username : {username}</div>
+            <div>Email : {email}</div>
         </div>
     );
 };
