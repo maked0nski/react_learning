@@ -1,11 +1,12 @@
 import './App.css';
+import Spacexs from "./components/Spacexs/Spacexs";
 
 function App() {
-  return (
-    <>
-
-    </>
-  );
+    return (
+        <>
+            <Spacexs/>
+        </>
+    );
 }
 
 export default App;
