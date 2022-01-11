@@ -1,4 +1,5 @@
 import React, {useEffect, useState} from 'react';
+
 import User from "../User/User";
 
 const Users = () => {
@@ -10,7 +11,6 @@ const Users = () => {
             .then(promise => promise.json())
             .then(promise => setUsers(promise))
     }, [])
-
 
     return (
         <div className={'users'}>

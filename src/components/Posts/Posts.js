@@ -1,6 +1,6 @@
 import React, {useEffect, useState} from 'react';
-import Post from "../Post/Post";
 
+import Post from "../Post/Post";
 
 const Posts = () => {
 
@@ -15,7 +15,6 @@ const Posts = () => {
     return (
         <div className={'posts'}>
             <h2>Posts</h2>
-
             {posts.map(value => <Post key={value.id} data={value}/>)}
         </div>
     );
