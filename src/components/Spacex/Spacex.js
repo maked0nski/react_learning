@@ -1,14 +1,15 @@
 import React from 'react';
 
 const Spacex = (props) => {
+    const {data: {mission_name, launch_year, links: {mission_patch_small}}} = props
 
     return (
         <div className={'element'}>
             <div className={'wrap'}>
-                <h1>{props.data.mission_name}</h1>
-                <p>{props.data.launch_year}</p>
+                <h1>{mission_name}</h1>
+                <p>{launch_year}</p>
             </div>
-            <img src={props.data.links.mission_patch_small} alt={props.data.mission_name}/>
+            <img src={mission_patch_small} alt={mission_name}/>
         </div>
     );
 };
