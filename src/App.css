@@ -1,0 +1,6 @@
+.userList{
+    display: flex;
+}
+.userList button{
+    margin-inline: 10px;
+}
