@@ -14,7 +14,7 @@ const Posts = ({userId, getPostId}) => {
     return (
         <div className={'PostsListBlock'}>
             <h2>Posts user</h2>
-            {posts && <div>{posts.map(value => <Post key={value.id} post={value} getPostId={getPostId}/>)}</div>}
+            <div>{posts.map(value => <Post key={value.id} post={value} getPostId={getPostId}/>)}</div>
         </div>
     );
 };

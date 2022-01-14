@@ -1,6 +1,40 @@
-.userList{
+#root{
+    width: 90%;
+    margin: 0 auto;
+}
+h1{
+    margin: 0;
+    text-align: center;
+}
+h2{
+    text-align: center;
+}
+span{
+     font-weight: bold;
+ }
+.userListBlock, .userDetailsBlock{
+    padding: 20px;
+    width: 50%;
+}
+.wrapUsers{
+    width: 100%;
     display: flex;
 }
-.userList button{
-    margin-inline: 10px;
+
+.userList{
+    display: flex;
+    justify-content: space-between;
+    margin-block: 10px;
+}
+
+.userDetailsInfo div{
+    margin-block: 10px;
+}
+
+.userDetailsBlock button{
+    margin: 30px 60px;
+    display: block;
+}
+.postBlockItem, .commentBlockItem{
+    padding: 20px;
 }
