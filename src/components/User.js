@@ -1,5 +1,6 @@
 import React from 'react';
 
+
 const User = ({user, getUser}) => {
     const {id, name} = user
     return (

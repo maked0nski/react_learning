@@ -1,5 +1,6 @@
 import {patch} from "../config/urls";
 
+
 const getAll = () => {
     return fetch(patch.posts)
         .then(value => value.json())

@@ -1,7 +1,9 @@
 import React, {useEffect, useState} from 'react';
 
+
 import {commentsService} from "../services/comments.services";
 import Comment from "./Comment";
+
 
 const Comments = ({postId}) => {
     const [comments, setComments] = useState([]);

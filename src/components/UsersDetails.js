@@ -1,5 +1,6 @@
 import React from "react";
 
+
 const UsersDetails = ({user, getUserId}) => {
 
     return (
