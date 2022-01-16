@@ -1,22 +1,9 @@
-import React, {useState} from 'react';
-import {useForm} from "react-hook-form";
+import React from 'react';
 
 import './form.css'
-import {carService} from "../../servises/car.service";
 
-const Form = () => {
+const Form = ({register, handleSubmit, response, onSubmit}) => {
 
-    const {register, handleSubmit, watch, formState:{errors}} = useForm();
-    const [response, setResponse] = useState({});
-
-    const onSubmit = (something) => {
-        carService.create(something).then(value => value).catch(error=>{
-            // console.log(error.response.data)
-            setResponse(error.response.data)
-        })
-
-    }
-    // console.log(response)
     return (
         <div>
             <form onSubmit={handleSubmit(onSubmit)}>

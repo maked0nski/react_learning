@@ -8,12 +8,12 @@ const Cars = ({editCar}) => {
     const [cars, setCars] = useState([]);
 
     const deleteCar = (id) => {
-        carService.deleteById(id).catch(error=> console.log(error))
+        carService.deleteById(id).catch(error => console.log(error));
     }
 
     useEffect(() => {
         carService.getAll().then(value => setCars([...value]))
-    }, []);
+    }, [cars]);
 
     return (
         <div>
