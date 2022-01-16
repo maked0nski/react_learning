@@ -1,30 +1,24 @@
 import {useState} from "react";
-import {useForm} from "react-hook-form";
 
 import './App.css';
-
 import Form from "./components/Form/Form";
 import Cars from "./components/Cars/Cars";
+import EditForm from "./components/EditForm/EditForm";
 
-import {carService} from "./servises/car.service";
 
 function App() {
-    const {register, handleSubmit} = useForm();
-    const [response, setResponse] = useState({});
+    const [carItem, setCarItem] = useState(null);
 
-    const onSubmit = (something) => {
-        carService.create(something).then(value => value).catch(error=>{
-            setResponse(error.response.data)
-        })
+    const editCar = (car) => {
+        setCarItem(car)
+        console.log(car);
+
     }
-
-const editCar = (id) => {
-    console.log(id)
-}
 
     return (
         <>
-            <Form register={register} handleSubmit={handleSubmit} response={response} onSubmit={onSubmit}/>
+            <Form/>
+            {carItem && <EditForm carItem={carItem}/>}
             <Cars editCar={editCar}/>
         </>
     );

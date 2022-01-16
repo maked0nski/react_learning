@@ -1,5 +1,6 @@
 import React, {useEffect, useState} from 'react';
 
+import './cars.css'
 import {carService} from "../../servises/car.service";
 import Car from "../Car/Car";
 
@@ -16,7 +17,7 @@ const Cars = ({editCar}) => {
     }, [cars]);
 
     return (
-        <div>
+        <div className={'carsBlock'}>
             {cars.map(value => <Car key={value.id} car={value} deleteCar={deleteCar} editCar={editCar}/>)}
         </div>
     );

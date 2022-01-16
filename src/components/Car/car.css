@@ -1,0 +1,13 @@
+.car{
+    border: 1px solid silver;
+    border-radius: 10px;
+    padding: 20px;
+    margin: 20px;
+    display: flex;
+    flex: 20%;
+    max-width: 20%;
+}
+.carButton button{
+    display: block;
+    margin: 10px;
+}
