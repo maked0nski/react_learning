@@ -4,7 +4,7 @@ import './cars.css'
 import {carService} from "../../servises/car.service";
 import Car from "../Car/Car";
 
-const Cars = ({editCar}) => {
+const Cars = ({editCar, trigger}) => {
 
     const [cars, setCars] = useState([]);
 
@@ -14,7 +14,7 @@ const Cars = ({editCar}) => {
 
     useEffect(() => {
         carService.getAll().then(value => setCars([...value]))
-    }, [cars]);
+    }, [trigger]);
 
     return (
         <div className={'carsBlock'}>

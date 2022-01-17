@@ -6,17 +6,15 @@ import Cars from "./components/Cars/Cars";
 
 
 function App() {
-    const [carItem, setCarItem] = useState(null);
+    const [editCar, setEditCar] = useState(null);
 
-    const editCar = (car) => {
-        setCarItem(car)
-    }
+    const [trigger, setTrigger] = useState(null);
 
+    console.log(trigger)
     return (
         <>
-            <Form carItem={carItem}/>
-            {/*{carItem && <EditForm carItem={carItem}/>}*/}
-            <Cars editCar={editCar}/>
+            <Form editCar={editCar} update={setTrigger}/>
+            <Cars editCar={setEditCar} trigger={trigger}/>
         </>
     );
 }
