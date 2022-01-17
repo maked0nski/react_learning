@@ -13,7 +13,7 @@ const EditForm = ({carItem}) => {
         carService.updateById(carItem.id, car).then(value => value).catch(error=>{
             setResponse(error.response.data)
         })
-        console.log(car);
+
     }
     const {model, price, year} = carItem;
 
