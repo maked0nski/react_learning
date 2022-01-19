@@ -1,0 +1,10 @@
+.mainFrame {
+    width: 95%;
+    margin: 0 auto;
+    height: calc(100vh - 96px);
+    overflow: hidden;
+    overflow-y: auto;
+}
+h1{
+    text-align: center;
+}

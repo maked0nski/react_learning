@@ -1,9 +1,12 @@
 import React from 'react';
+import {Outlet} from "react-router-dom";
+
+import css from './homePage.module.css'
 
 const HomePage = () => {
     return (
-        <div>
-            <h1>Home</h1>
+        <div className={css.homePage}>
+            <Outlet/>
         </div>
     );
 };

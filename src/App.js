@@ -1,6 +1,4 @@
-import { render } from "react-dom";
 import {
-    Link,
     Routes,
     Route
 } from "react-router-dom";
@@ -9,25 +7,25 @@ import css from './App.module.css';
 import HomePage from "./pages/HomePage/HomePage";
 import PostsPage from "./pages/PostsPage/PostsPage";
 import NotFoundPage from "./pages/NotFoundPage/NotFoundPage";
-import UserPage from "./pages/UsersPage/UserPage";
+import UsersPage from "./pages/UsersPage/UsersPage";
+import Layout from "./conponents/Layout/Layout";
+import DetailsUser from "./pages/DetailsUsersPage/DetailsUser";
 
 function App() {
     return (
         <>
-            <div className={css.header}>
-                <Link to='/'>Home</Link>
-                <Link to='users'>Users</Link>
-                <Link to='posts'>Posts</Link>
-            </div>
-
             <Routes>
-                <Route path={"/"} element={<HomePage/>}/>
-                <Route path={"users"} element={<UserPage/>}/>
-                <Route path={"posts"} element={<PostsPage/>}/>
+                <Route path={"/"} element={<Layout/>}>
+                    <Route  element={<HomePage/>}/>
+                    <Route path={"users"} element={<UsersPage/>}>
+                        <Route path={":id"} element={<DetailsUser/>}></Route>
+                        <Route path={":id/posts"} element={<PostsPage/>}/>
+                    </Route>
+                    <Route path={"posts"} element={<PostsPage/>}/>
+                    <Route path={"*"} element={<NotFoundPage/>}/>
+                </Route>
             </Routes>
         </>
-
-
     );
 }
 
