@@ -24,7 +24,7 @@ const UsersPageDetails = ({}) => {
     const {name, username, email, address, phone, website, company} = user;
 
     return (
-        <div>
+        <>
             <div className={css.detailsUser}>
                 <h1>UsersPageDetails</h1>
                 <div>Id: <span>{id}</span></div>
@@ -41,10 +41,9 @@ const UsersPageDetails = ({}) => {
                 <Link to={`posts`}>
                     <button>All user posts</button>
                 </Link>
-                {/*<Link to={`/posts?userId=${id}`}><button>All user posts</button></Link>*/}
             </div>
             <Outlet/>
-        </div>
+        </>
     );
 };
 

@@ -1,6 +1,7 @@
 import React, {useEffect, useState} from 'react';
 import {Link, Outlet, useLocation, useParams} from 'react-router-dom';
 
+import css from './postPageDetails.css'
 import {postService} from "../../services";
 
 const PostPageDetails = () => {
@@ -21,8 +22,8 @@ const PostPageDetails = () => {
     }, [id])
 
     return (
-        <div>
-            <h1>PostPageDetails</h1>
+        <div className={css.postPageDetails}>
+            <h1>Post Page Details</h1>
             {post && <div>
                 <div>id: {post.id}, userId: {post.userId}</div>
                 <div>title: {post.title}</div>

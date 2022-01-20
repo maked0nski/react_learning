@@ -4,6 +4,7 @@ import {Outlet} from 'react-router-dom';
 import {postService} from "../../services";
 import {Post} from "../../conponents";
 
+import css from './postPage.module.css'
 
 const PostsPage = () => {
 
@@ -14,7 +15,7 @@ const PostsPage = () => {
     }, [])
 
     return (
-        <div>
+        <div className={css.postsPage}>
             <h1>Posts Page</h1>
             {posts && posts.map(post => <Post key={post.id} post={post}/>)}
             <Outlet/>

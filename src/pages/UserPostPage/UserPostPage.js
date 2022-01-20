@@ -1,7 +1,7 @@
 import React, {useEffect, useState} from 'react';
 import {useParams} from "react-router-dom";
 
-
+import css from './userPostPage.module.css'
 import {userService} from "../../services";
 import {Post} from "../../conponents";
 
@@ -18,7 +18,7 @@ const UserPostPage = () => {
     }, [params.id])
 
     return (
-        <div>
+        <div className={css.userPostPage}>
             <h1>UserPostPage</h1>
             {posts && posts.map(post => <Post key={post.id} post={post} params={params}/>)}
         </div>
