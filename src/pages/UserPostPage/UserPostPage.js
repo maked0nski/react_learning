@@ -7,20 +7,20 @@ import {Post} from "../../conponents";
 
 const UserPostPage = () => {
 
-    const {id} = useParams();
+    const params = useParams();
 
     const [posts, setPosts] = useState([]);
 
     useEffect(() => {
-        userService.getAllPostByUserId(id).then(value => {
-            setPosts(value)
+        userService.getAllPostByUserId(params.id).then(value => {
+            setPosts([...value])
         })
-    }, [id])
+    }, [params.id])
 
     return (
         <div>
             <h1>UserPostPage</h1>
-            {posts && posts.map(post => <Post key={post.id} post={post}/>)}
+            {posts && posts.map(post => <Post key={post.id} post={post} params={params}/>)}
         </div>
     );
 };
