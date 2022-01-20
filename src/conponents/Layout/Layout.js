@@ -1,20 +1,20 @@
 import React from 'react';
+import {Outlet} from 'react-router-dom';
 
-import Header from "../Header/Header";
-import Footer from "../Footer/Footer";
 import css from './Layout.module.css'
-import HomePage from "../../pages/HomePage/HomePage";
+import {Header} from "../Header/Header";
+import {Footer} from "../Footer/Footer";
 
 const Layout = () => {
     return (
         <>
             <Header/>
             <div className={css.mainFrame}>
-                <HomePage/>
+                <Outlet/>
             </div>
             <Footer/>
         </>
     );
 };
 
-export default Layout;
+export {Layout};

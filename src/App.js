@@ -1,31 +1,37 @@
+import {Routes, Route, Navigate} from "react-router-dom";
+import {Layout} from "./conponents";
 import {
-    Routes,
-    Route
-} from "react-router-dom";
+    NotFoundPage,
+    PostPageComments,
+    PostPageDetails,
+    PostsPage,
+    UserPostPage,
+    UsersPage,
+    UsersPageDetails
+} from "./pages";
 
-import css from './App.module.css';
-import HomePage from "./pages/HomePage/HomePage";
-import PostsPage from "./pages/PostsPage/PostsPage";
-import NotFoundPage from "./pages/NotFoundPage/NotFoundPage";
-import UsersPage from "./pages/UsersPage/UsersPage";
-import Layout from "./conponents/Layout/Layout";
-import DetailsUser from "./pages/DetailsUsersPage/DetailsUser";
 
 function App() {
     return (
-        <>
-            <Routes>
-                <Route path={"/"} element={<Layout/>}>
-                    <Route  element={<HomePage/>}/>
-                    <Route path={"users"} element={<UsersPage/>}>
-                        <Route path={":id"} element={<DetailsUser/>}></Route>
-                        <Route path={":id/posts"} element={<PostsPage/>}/>
+        <Routes>
+            <Route path={"/"} element={<Layout />}>
+                <Route index element={<Navigate to={'users'} />} />
+
+                <Route path={"users"} element={<UsersPage />}>
+                    <Route path={":id"} element={<UsersPageDetails />}>
+                        <Route path={"posts"} element={<UserPostPage />}/>
                     </Route>
-                    <Route path={"posts"} element={<PostsPage/>}/>
-                    <Route path={"*"} element={<NotFoundPage/>}/>
                 </Route>
-            </Routes>
-        </>
+
+                <Route path={"posts"} element={<PostsPage />}>
+                    <Route path={':id'} element={<PostPageDetails />} >
+                        <Route path={'comments'} element={<PostPageComments/>} />
+                    </Route>
+                </Route>
+
+                <Route path={"*"} element={<NotFoundPage />}/>
+            </Route>
+        </Routes>
     );
 }
 

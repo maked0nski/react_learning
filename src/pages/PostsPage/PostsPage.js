@@ -1,35 +1,25 @@
 import React, {useEffect, useState} from 'react';
-import {postService} from "../../services/posts.service";
-import Post from "../../conponents/Post/Post";
-import {useSearchParams} from "react-router-dom";
+import {Outlet} from 'react-router-dom';
+
+import {postService} from "../../services";
+import {Post} from "../../conponents";
+
 
 const PostsPage = () => {
 
     const [posts, setPosts] = useState([]);
 
-    const [query, setQuery] = useSearchParams();
-
     useEffect(() => {
-        postService.getAll().then(value => {
-
-            const userId = query.get('userId');
-            let filter = [...value];
-            if (userId) {
-                console.log(filter)
-                console.log(userId)
-                filter = [...value].filter(post => post.userId.includes(userId))
-            }
-            console.log(filter)
-            setPosts(filter)
-        })
-    }, [query])
+        postService.getAll().then(value => setPosts(value))
+    }, [])
 
     return (
         <div>
-            <h1>Posts</h1>
+            <h1>Posts Page</h1>
             {posts && posts.map(post => <Post key={post.id} post={post}/>)}
+            <Outlet/>
         </div>
     );
 };
 
-export default PostsPage;
+export {PostsPage};

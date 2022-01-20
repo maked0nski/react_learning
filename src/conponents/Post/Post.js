@@ -1,15 +1,19 @@
 import React from 'react';
 
+import css from './post.module.css'
+import {Link} from "react-router-dom";
+
 const Post = ({post}) => {
-    const  {id, userId, title, body}=post;
-    console.log(post)
+
+    const {id, title} = post;
+
     return (
-        <div>
-            <div>id: {id}, userId: {userId}</div>
-            <div>title: {title}</div>
-            <div>body: {body}</div>
+        <div className={css.postItem}>
+            <Link to={id.toString()} state={post}>
+                <div>id: {id}, title: {title}</div>
+            </Link>
         </div>
     );
 };
 
-export default Post;
+export {Post};
