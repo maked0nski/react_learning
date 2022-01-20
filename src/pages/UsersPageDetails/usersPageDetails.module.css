@@ -1,9 +1,11 @@
-.detailsUser{
+.detailsUser {
     grid-area: 1 / 2 / 2 / 3;
 }
-.detailsUser span{
-    font-weight:bold;
+
+.detailsUser span {
+    font-weight: bold;
 }
-.detailsUser div{
+
+.detailsUser div {
     margin: 10px 0;
 }

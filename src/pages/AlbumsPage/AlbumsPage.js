@@ -17,7 +17,7 @@ const AlbumsPage = () => {
 
     return (
         <div>
-            <h2>User albums</h2>
+            <h2>User Albums</h2>
             {albums && albums.map(value => <Albums key={value.id} album={value} />)}
             <Outlet/>
         </div>

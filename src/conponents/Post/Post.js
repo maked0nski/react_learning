@@ -8,12 +8,12 @@ const Post = ({post, params}) => {
     const {id, title} = post;
 
     let div=<Link to={id.toString()} state={post}>
-        <div>id: {id}, title: {title}</div>
+        <div><span>id:</span> {id}, <span>title:</span> {title}</div>
     </Link>
 
     if(params){
         div = <div>
-            <div>id: {id}, title: {title}</div>
+            <div><span>id:</span> {id}, <span>title:</span> {title}</div>
         </div>
     }
 

@@ -15,9 +15,11 @@ const PostsPage = () => {
     }, [])
 
     return (
-        <div className={css.postsPage}>
-            <h1>Posts Page</h1>
-            {posts && posts.map(post => <Post key={post.id} post={post}/>)}
+        <div className={css.postsPageLayout}>
+            <div className={css.postsPage}>
+                <h1>Posts Page</h1>
+                {posts && posts.map(post => <Post key={post.id} post={post}/>)}
+            </div>
             <Outlet/>
         </div>
     );

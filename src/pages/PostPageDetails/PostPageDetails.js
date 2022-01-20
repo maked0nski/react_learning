@@ -1,7 +1,7 @@
 import React, {useEffect, useState} from 'react';
 import {Link, Outlet, useLocation, useParams} from 'react-router-dom';
 
-import css from './postPageDetails.css'
+import css from './postPageDetails.module.css'
 import {postService} from "../../services";
 
 const PostPageDetails = () => {
@@ -14,22 +14,23 @@ const PostPageDetails = () => {
 
     useEffect(() => {
         if(state){
-            setPost({...state});
+            setPost(state);
             return
         }
-        postService.getById(id).then(value => setPost(value))
+        postService.getById(id).then(value => setPost({...value}))
 
     }, [id])
 
     return (
         <div className={css.postPageDetails}>
+        {/*<div className={'postPageDetails'}>*/}
             <h1>Post Page Details</h1>
-            {post && <div>
-                <div>id: {post.id}, userId: {post.userId}</div>
-                <div>title: {post.title}</div>
-                <div>body: {post.body}</div>
+            <div className={css.details}>
+                <div><span>id:</span> {post.id}, <span>userId:</span> {post.userId}</div>
+                <div><span>title:</span> {post.title}</div>
+                <div><span>body:</span> {post.body}</div>
                 <Link to={'comments'}><button>Показати коменти до поста</button></Link>
-            </div>}
+            </div>
             <Outlet/>
         </div>
     );

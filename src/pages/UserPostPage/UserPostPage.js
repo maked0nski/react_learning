@@ -19,7 +19,7 @@ const UserPostPage = () => {
 
     return (
         <div className={css.userPostPage}>
-            <h1>UserPostPage</h1>
+            <h1>User Post Page</h1>
             {posts && posts.map(post => <Post key={post.id} post={post} params={params}/>)}
         </div>
     );

@@ -2,7 +2,8 @@ import React, {useEffect, useState} from 'react';
 import {useParams} from "react-router-dom";
 
 import {postService} from "../../services";
-import Comment from "../../conponents/Comment/Comment";
+import css from './postPageComments.module.css'
+import {Comment} from "../../conponents";
 
 const PostPageComments = () => {
 
@@ -15,8 +16,8 @@ const PostPageComments = () => {
 
     }, [postId])
     return (
-        <div>
-            <h1>PostPageComments</h1>
+        <div className={css.postPageComments}>
+            <h1>Post Page Comments</h1>
             {comments && comments.map(value => <Comment key={value.id} comment={value}/>)}
         </div>
     );

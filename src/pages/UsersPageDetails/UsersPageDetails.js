@@ -26,7 +26,7 @@ const UsersPageDetails = ({}) => {
     return (
         <>
             <div className={css.detailsUser}>
-                <h1>UsersPageDetails</h1>
+                <h1>Users Page Details</h1>
                 <div>Id: <span>{id}</span></div>
                 <div>Name: <span>{name}</span></div>
                 <div>Username: <span>{username}</span></div>

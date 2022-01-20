@@ -7,7 +7,7 @@ const User = ({user}) => {
     const {id, name, username} = user;
     return (
         <div className={css.userBlock}>
-            <div>{id}) {name}, (username - {username}</div>
+            <div>{id}) <span>{name}</span>, (username - {username})</div>
             <div><Link to={id.toString()} state={user}>
                 <button>Details</button>
             </Link></div>
