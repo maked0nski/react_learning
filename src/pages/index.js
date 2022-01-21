@@ -7,5 +7,3 @@ export * from './PostsPage/PostsPage';
 export * from './UserPostPage/UserPostPage';
 export * from './UsersPage/UsersPage';
 export * from './UsersPageDetails/UsersPageDetails';
-
-

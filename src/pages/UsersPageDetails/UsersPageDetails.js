@@ -1,5 +1,5 @@
 import React, {useEffect, useState} from 'react';
-import {Link, useLocation, useParams, Outlet} from "react-router-dom";
+import {Link, useLocation, useParams, Outlet} from 'react-router-dom';
 
 import css from './usersPageDetails.module.css'
 import {userService} from "../../services";
@@ -14,7 +14,7 @@ const UsersPageDetails = ({}) => {
 
 
     useEffect(() => {
-        if(state){
+        if (state) {
             setUser(state);
             return;
         }
