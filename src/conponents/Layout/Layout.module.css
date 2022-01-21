@@ -1,7 +1,7 @@
 .mainFrame {
     width: 95%;
     margin: 0 auto;
-    height: calc(100vh - 96px);
+    height: calc(100vh - 146px);
     overflow: hidden;
     overflow-y: auto;
     display: grid;
