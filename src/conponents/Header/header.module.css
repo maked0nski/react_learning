@@ -27,14 +27,13 @@
     position: relative;
     display: inline-block;
     padding: 25px 30px;
-    margin: 40px 0;
     color: #03e9f4;
     text-decoration: none;
     text-transform: uppercase;
     transition: 0.5s;
     letter-spacing: 4px;
     overflow: hidden;
-    margin-right: 50px;
+    margin: 40px 50px 40px 0;
 
 }
 .header a:hover{
@@ -44,7 +43,7 @@
     0 0 25px #03e9f4,
     0 0 50px #03e9f4,
     0 0 200px #03e9f4;
-    -webkit-box-reflect:below 1px linear-gradient(transparent, #0005);
+    /*-webkit-box-reflect:below 1px linear-gradient(transparent, #0005);*/
 }
 .header a:nth-child(1){
     filter: hue-rotate(270deg);
