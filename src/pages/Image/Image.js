@@ -17,7 +17,6 @@ const Image = () => {
 
     useEffect(() => {
         setImage({link: `https://loremflickr.com/320/240/${keyword}?random=${counter.counter}`})
-        console.log('useEffect')
     }, [counter, keyword])
 
     return (
