@@ -1,0 +1,10 @@
+.charceterBlock {
+    width: 23%;
+    margin: 10px;
+    padding: 10px;
+    background-color: #f5f4f4;
+}
+
+.charceterBlock img{
+    width: 100%;
+}

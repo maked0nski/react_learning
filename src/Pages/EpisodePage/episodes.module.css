@@ -1,0 +1,26 @@
+.episodePage{
+
+
+}
+.episodePageContent{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    width: 70%;
+    margin: 0 auto;
+}
+.secondHeader{
+    display: flex;
+    height: 80px;
+    font-size: 24px;
+    background-color: silver;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+}
+.episodePageButton{
+    display: flex;
+    justify-content: center;
+    padding: 20px;
+
+}

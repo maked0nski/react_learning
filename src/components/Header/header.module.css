@@ -1,0 +1,13 @@
+.header {
+    display: flex;
+    height: 20px;
+    background-color: blue;
+    padding: 10px 30px;
+    align-items: center;
+    font-weight: bold;
+}
+.header a {
+    font-size: 16px;
+    text-decoration: none;
+    color: snow;
+}
