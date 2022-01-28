@@ -10,7 +10,7 @@ const EpisodePage = () => {
     const [state, setState] = useState({});
 
     useEffect(() => {
-        if (numberPage){
+        if (numberPage) {
             episodesService.getByNumberPage(numberPage).then(value => setState(value))
         } else {
             episodesService.getAll().then(value => setState(value))
@@ -19,7 +19,7 @@ const EpisodePage = () => {
 
 
     const btnOnClick = (e) => {
-        if(state.info[e.target.name]){
+        if (state.info[e.target.name]) {
             setNumberPage(state.info[e.target.name].slice(-1))
         }
     }

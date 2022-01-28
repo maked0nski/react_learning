@@ -13,7 +13,7 @@ const Character = ({value}) => {
 
     useEffect(() => {
         episodesService.getCharacterById(characterId).then(value1 => setCharacter(value1))
-    }, [])
+    }, [characterId])
 
     return (
         <div className={css.charceterBlock} >

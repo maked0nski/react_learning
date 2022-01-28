@@ -11,7 +11,7 @@ const EpisodeDetailsPage = () => {
 
     const {pathname, state} = useLocation();
 
-    const [details, setDetails] = useState();
+    const [details, setDetails] = useState(null);
 
 
     useEffect(()=>{

@@ -14,8 +14,6 @@ function App() {
                 <Route path={'episode'} element={<EpisodePage/>}/>
                 <Route path={'episode/:id'} element={<EpisodeDetailsPage/>}/>
 
-
-
             </Route>
         </Routes>
     );
