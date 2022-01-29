@@ -1,0 +1,9 @@
+.block, .formBlock{
+    margin: 0 auto;
+    width: 70%;
+    display: flex;
+    justify-content: space-evenly
+}
+.item{
+    margin: 10px;
+}
