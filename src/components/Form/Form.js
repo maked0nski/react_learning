@@ -16,9 +16,30 @@ const Form = () => {
 
     return (
         <form onSubmit={handleSubmit(submit)}>
-           <label className={'form-label'}>Model: <input className={'form-control'} placeholder={'Enter a model'} type={'text'} {...register('model')}/></label>
-           <label className={'form-label'}>Price: <input className={'form-control'} placeholder={'Enter a price'} type={'text'} {...register('price')}/></label>
-           <label className={'form-label'}>Year: <input className={'form-control'} placeholder={'Enter a year'} type={'text'} {...register('year')}/></label>
+            <label className={'form-label'}>Model:
+                <input
+                    className={'form-control'}
+                    placeholder={'Enter a model'}
+                    type={'text'}
+                    {...register('model')}
+                />
+            </label>
+            <label className={'form-label'}>Price:
+                <input
+                    className={'form-control'}
+                    placeholder={'Enter a price'}
+                    type={'text'}
+                    {...register('price')}
+                />
+            </label>
+            <label className={'form-label'}>Year:
+                <input
+                    className={'form-control'}
+                    placeholder={'Enter a year'}
+                    type={'text'}
+                    {...register('year')}
+                />
+            </label>
             <button type="submit" className="btn btn-primary">Save</button>
         </form>
     );
