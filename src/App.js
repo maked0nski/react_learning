@@ -1,7 +1,7 @@
-import {Cats, Form} from "./components";
 import {useState} from "react";
 
 import './App.css';
+import {Form, Items} from "./components";
 
 function App() {
 
@@ -14,6 +14,7 @@ function App() {
     }
 
     const getId = (id) => {
+
         setCats(cats.filter(cat => cat.id !== id))
     }
 
@@ -24,8 +25,8 @@ function App() {
                 <Form getFormData={getFormData} label={'dog'}/>
             </div>
             <div className={'block'}>
-                <Cats cats={cats} getId={getId} word={'cat'}/>
-                <Cats cats={cats} getId={getId} word={'dog'}/>
+                <Items cats={cats} getId={getId} word={'cat'}/>
+                <Items cats={cats} getId={getId} word={'dog'}/>
             </div>
         </>
     );

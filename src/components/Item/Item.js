@@ -1,6 +1,6 @@
 import React from 'react';
 
-const Cat = ({pet: {id, name}, getId}) => {
+const Item = ({pet: {id, name}, getId}) => {
 
     return (
         <div className={'item'}>
@@ -10,4 +10,4 @@ const Cat = ({pet: {id, name}, getId}) => {
     );
 };
 
-export {Cat};
+export {Item};
