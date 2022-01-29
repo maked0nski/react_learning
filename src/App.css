@@ -1,0 +1,24 @@
+.container{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: space-evenly;
+    margin-top: 30px;
+}
+.card{
+    width: 150px;
+
+}
+form{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 300px;
+    margin: 0 auto;
+}
+.error{
+    color: red;
+}
+button{
+    margin: 5px 0;
+}
