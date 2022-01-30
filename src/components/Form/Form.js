@@ -2,7 +2,7 @@ import React from 'react';
 import {useForm} from "react-hook-form";
 import {useDispatch, useSelector} from "react-redux";
 
-import {createCar, editCar, updateCar} from "../../store";
+import {createCar, editCar} from "../../store";
 
 const Form = () => {
     const {handleSubmit, register, reset, setValue} = useForm();
@@ -14,8 +14,8 @@ const Form = () => {
     const submit = (data) => {
         if(updCar?.id){
             let car = {...data, id: updCar.id}
-            reset()
             dispatch(editCar({car}))
+            reset()
 
         } else {
             dispatch(createCar({data}))             //через Діспач передаємо обєкт data в Редюс стора addCar в action

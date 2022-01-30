@@ -40,9 +40,9 @@ export const editCar = createAsyncThunk(
     'carSlice/editCar',
     async ({car}, {dispatch}) => {
         try {
-            console.log(car)
             await carService.update(car.id, car)
-            getAllCars()
+            dispatch(updateCar({upd: 1}))
+
 
         } catch (e) {
             console.log(e)
@@ -57,7 +57,8 @@ const carSlice = createSlice({
         cars: [],
         updCar: {},
         status: null,
-        error: null
+        error: null,
+        upd: 0
     },
     reducers: {
         addCar: (state, action) => {
@@ -68,15 +69,13 @@ const carSlice = createSlice({
         },
         editCarBtn: (state, action) => {
             state.updCar = {...action.payload.car}
-            console.log(state.updCar);
         },
         updateCar: (state, action) => {
-            // state.updCar = {...action.payload.car}
-            // console.log(action.payload);
+            state.upd = action.payload.upd
         }
     },
     extraReducers: {
-        [getAllCars.pending]: (state, action) => {
+        [getAllCars.pending]: (state) => {
             state.status = 'pending'
             state.error = null
         },
