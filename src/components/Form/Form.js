@@ -1,18 +1,32 @@
 import React from 'react';
 import {useForm} from "react-hook-form";
-import {useDispatch} from "react-redux";
+import {useDispatch, useSelector} from "react-redux";
 
-import {createCar} from "../../store";
+import {createCar, editCar, updateCar} from "../../store";
 
 const Form = () => {
-    const {handleSubmit, register, reset} = useForm();
+    const {handleSubmit, register, reset, setValue} = useForm();
+
+    const {updCar} = useSelector(state => state['carReducer']);
 
     const dispatch = useDispatch();     //відповідає за запис данних в стор
 
     const submit = (data) => {
-        dispatch(createCar({data}))             //через Діспач передаємо обєкт data в Редюс стора addCar в action
-        reset()
+        if(updCar?.id){
+            let car = {...data, id: updCar.id}
+            reset()
+            dispatch(editCar({car}))
+
+        } else {
+            dispatch(createCar({data}))             //через Діспач передаємо обєкт data в Редюс стора addCar в action
+            reset()
+        }
+        // reset()
     }
+
+    setValue('model', updCar ? updCar?.model: updCar?.model)
+    setValue('price', updCar ? updCar?.price: updCar?.price)
+    setValue('year', updCar ? updCar?.year: updCar?.year)
 
     return (
         <form onSubmit={handleSubmit(submit)}>
@@ -22,13 +36,14 @@ const Form = () => {
                     placeholder={'Enter a model'}
                     type={'text'}
                     {...register('model')}
+
                 />
             </label>
             <label className={'form-label'}>Price:
                 <input
                     className={'form-control'}
                     placeholder={'Enter a price'}
-                    type={'text'}
+                    type={'number'}
                     {...register('price')}
                 />
             </label>
@@ -36,11 +51,11 @@ const Form = () => {
                 <input
                     className={'form-control'}
                     placeholder={'Enter a year'}
-                    type={'text'}
+                    type={'number'}
                     {...register('year')}
                 />
             </label>
-            <button type="submit" className="btn btn-primary">Save</button>
+            <button type="submit" className="btn btn-primary">{updCar?.id ? 'Edit' : 'Save'}</button>
         </form>
     );
 };
