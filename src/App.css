@@ -13,11 +13,21 @@ form{
     display: flex;
     flex-direction: column;
     justify-content: center;
-    width: 300px;
-    margin: 0 auto;
+    width: 400px;
+    margin: 10px auto;
+}
+label{
+    width: 80px;
+}
+.inputBlock{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 10px;
 }
 .error{
     color: red;
+    text-align: center;
 }
 button{
     margin: 5px 0;
