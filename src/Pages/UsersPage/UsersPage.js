@@ -33,7 +33,7 @@ const UsersPage = () => {
             <div className={css.userPage}>
                 <h1>List Users</h1>
                 {error && <h2 className={'error'}>{error}</h2>}
-                {users.map(user => <User key={user.id} user={user}/>)}
+                {users && users.map(user => <User key={user.id} user={user}/>)}
             </div>
             <Outlet/>
         </div>
