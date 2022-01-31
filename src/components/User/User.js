@@ -15,7 +15,7 @@ const User = ({user}) => {
         <div className={css.userBlock}>
             <div>{id}) <span>{name}</span>, (username - {username})</div>
             <div><Link to={id.toString()} state={user}>
-                <button onClick={() =>{dispatch(usersItem({user}))}}>Details</button>
+                <button className={'btn btn-primary'} onClick={() =>{dispatch(usersItem({user}))}}>Details</button>
             </Link></div>
         </div>
     );

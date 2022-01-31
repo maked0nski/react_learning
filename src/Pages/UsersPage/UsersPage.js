@@ -4,6 +4,7 @@ import {Outlet} from 'react-router-dom'
 
 import {getAllUsers} from "../../store";
 import {User} from "../../components";
+import css from './userPage.module.css'
 
 
 
@@ -16,16 +17,21 @@ const UsersPage = () => {
     const dispatch = useDispatch();
 
     useEffect(() => {
-        dispatch(getAllUsers())
-    }, [])
+        if(users.length){
+            dispatch(getAllUsers())
+        }
+
+    }, [users.length])
 
     return (
-        <>
-            <h2>UsersPage</h2>
-            {error && <h2 className={'error'}>{error}</h2>}
-            {users.map(user => <User key={user.id} user={user} />)}
+        <div className={css.userPageContainer}>
+            <div className={css.userPage}>
+                <h1>List Users</h1>
+                {error && <h2 className={'error'}>{error}</h2>}
+                {users.map(user => <User key={user.id} user={user}/>)}
+            </div>
             <Outlet/>
-        </>
+        </div>
     );
 };
 

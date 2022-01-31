@@ -17,7 +17,6 @@ const UserPageDetails = () => {
     useEffect(() => {
         if (!user) {
             dispatch(getUserById({id:id}))
-        } else {
         }
     }, [user])
 
@@ -39,7 +38,7 @@ const UserPageDetails = () => {
                 <div>Company: <span>{user.company?.name}</span></div>
                 <div>catchPhrase: <span>{user.company?.catchPhrase}</span></div>
                 <Link to={`posts`}>
-                    <button>All user posts</button>
+                    <button className={'btn btn-primary'}>All user posts</button>
                 </Link>
             </div>
             {/*<Outlet/>*/}

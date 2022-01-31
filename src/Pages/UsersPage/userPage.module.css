@@ -1,0 +1,10 @@
+.userPage {
+    grid-area: 1 / 1 / 2 / 2;
+}
+.userPageContainer{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(2, auto);
+    grid-column-gap: 5px;
+    grid-row-gap: 5px;
+}
