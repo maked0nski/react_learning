@@ -17,11 +17,16 @@ const UsersPage = () => {
     const dispatch = useDispatch();
 
     useEffect(() => {
-        if(users.length){
+        if(!users.length){
+            console.log(users)
+            console.log('if')
             dispatch(getAllUsers())
+        } else {
+            console.log('else')
+            console.log(users.length)
         }
 
-    }, [users.length])
+    }, [users])
 
     return (
         <div className={css.userPageContainer}>
