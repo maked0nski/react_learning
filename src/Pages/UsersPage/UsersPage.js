@@ -21,9 +21,6 @@ const UsersPage = () => {
             console.log(users)
             console.log('if')
             dispatch(getAllUsers())
-        } else {
-            console.log('else')
-            console.log(users.length)
         }
 
     }, [users])
