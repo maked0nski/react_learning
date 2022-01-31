@@ -5,6 +5,7 @@ import {Car} from "../Car/Car";
 import {getAllCars, updateCar} from "../../store";
 
 const Cars = () => {
+
     const {cars, status, error, upd} = useSelector(state => state['carReducer']);       //відповідає за отримання данних із стору
 
     const dispatch = useDispatch();
@@ -20,6 +21,8 @@ const Cars = () => {
             {error && <h2 className={'error'}>{error}</h2>}
             {cars.map(car => <Car key={car.id} car={car}/>)}
         </div>
+
+
     );
 };
 

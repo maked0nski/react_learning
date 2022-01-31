@@ -1,0 +1,10 @@
+.userBlock {
+    margin: 5px 0;
+    display: grid;
+    grid-template-columns: 5fr 1fr 1fr;
+    gap: 10px;
+}
+
+.userBlock span {
+    font-weight: bold;
+}

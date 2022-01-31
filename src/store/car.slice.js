@@ -1,4 +1,5 @@
 import {createAsyncThunk, createSlice} from "@reduxjs/toolkit";
+
 import {carService} from "../services";
 
 export const getAllCars = createAsyncThunk(
@@ -7,6 +8,7 @@ export const getAllCars = createAsyncThunk(
         try {
             return await carService.getAll()
         } catch (e) {
+            console.log(e)
             return rejectWithValue(e.message)
         }
     }
