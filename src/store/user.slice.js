@@ -30,7 +30,7 @@ const userSlice = createSlice({
     name: 'userSlice',
     initialState: {
         user: undefined,
-        users: [],
+        users: undefined,
         status: null,
         error: null,
     },

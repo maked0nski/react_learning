@@ -17,9 +17,7 @@ const UsersPage = () => {
     const dispatch = useDispatch();
 
     useEffect(() => {
-        if(!users.length){
-            console.log(users)
-            console.log('if')
+        if(!users){
             dispatch(getAllUsers())
         }
 

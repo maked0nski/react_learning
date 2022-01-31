@@ -16,7 +16,6 @@ const UserPageDetails = () => {
 
     useEffect(() => {
         if (!user) {
-            console.log(user)
             dispatch(getUserById({id:id}))
         }
     }, [user])
