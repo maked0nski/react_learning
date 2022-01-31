@@ -1,9 +1,9 @@
 export * from './Car/Car';
 export * from './Cars/Cars';
+export * from './Comments/Comments';
 export * from './Form/Form';
 export * from './Footer/Footer';
 export * from './Header/Header';
 export * from './Layout/Layout';
 export * from './User/User';
-
-
+export * from './Post/Post';

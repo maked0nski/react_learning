@@ -47,4 +47,4 @@ const UserPageDetails = () => {
     );
 };
 
-export default UserPageDetails;
+export {UserPageDetails};

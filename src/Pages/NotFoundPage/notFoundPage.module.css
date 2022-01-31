@@ -1,0 +1,15 @@
+.errorPage {
+    height: calc(100vh - 146px);
+    display: flex;
+    justify-content: center;
+    align-items: center
+}
+.errorPageText {
+    width: 350px;
+    margin-right: 50px;
+}
+.errorPageText h1{
+    font-size: 500%;
+    text-align: left;
+}
+

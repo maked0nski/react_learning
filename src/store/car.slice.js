@@ -8,7 +8,6 @@ export const getAllCars = createAsyncThunk(
         try {
             return await carService.getAll()
         } catch (e) {
-            console.log(e)
             return rejectWithValue(e.message)
         }
     }

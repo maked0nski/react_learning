@@ -3,7 +3,7 @@ import {createAsyncThunk, createSlice} from "@reduxjs/toolkit";
 import {placeholderService} from "../services/placeholder.service";
 
 export const getAllUsers = createAsyncThunk(
-    'carSlice/getAllCars',
+    'userSlice/getAllUsers',
     async (_, {rejectWithValue}) => {
         try {
             return await placeholderService.getAllUsers()
@@ -14,10 +14,9 @@ export const getAllUsers = createAsyncThunk(
 )
 
 export const getUserById = createAsyncThunk(
-    'carSlice/getUserById',
-    async ({id}, {rejectWithValue,dispatch}) => {
+    'userSlice/getUserById',
+    async ({id}, {rejectWithValue, dispatch}) => {
         try {
-
             const user = await placeholderService.getUserById(id);
             dispatch(usersItem({user}))
         } catch (e) {
@@ -31,12 +30,13 @@ const userSlice = createSlice({
     initialState: {
         user: undefined,
         users: undefined,
+        // posts: undefined,
         status: null,
         error: null,
     },
     reducers: {
         usersItem: (state, action) => {
-            state.user={...action.payload.user}
+            state.user = {...action.payload.user}
         }
     },
     extraReducers: {
@@ -60,6 +60,7 @@ const userSlice = createSlice({
         [getUserById.fulfilled]: (state, action) => {
             state.status = 'fulfilled'
             state.users = action.payload
+            console.log(action.payload)
             state.error = null
         },
         [getUserById.rejected]: (state, action) => {

@@ -1,0 +1,8 @@
+.commentItem {
+    width: 400px !important;
+    margin: 10px !important;
+}
+
+.commentItem span {
+    font-weight: bold;
+}
