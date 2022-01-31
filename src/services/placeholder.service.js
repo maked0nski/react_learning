@@ -4,6 +4,7 @@ import {urls} from "../configs/urls";
 
 export const placeholderService = {
     getAllUsers: () => axiosPlaceholderService.get(urls.users).then(value => value.data),
+    getUserById: (id) => axiosPlaceholderService.get(`${urls.users}/${id}`).then(value => value.data),
     getAllPosts: () => axiosPlaceholderService.get(urls.users).then(value => value.data),
     getAllComments: () => axiosPlaceholderService.get(urls.users).then(value => value.data),
 }

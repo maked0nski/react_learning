@@ -8,7 +8,19 @@ export const getAllUsers = createAsyncThunk(
         try {
             return await placeholderService.getAllUsers()
         } catch (e) {
-            console.log(e)
+            return rejectWithValue(e.message)
+        }
+    }
+)
+
+export const getUserById = createAsyncThunk(
+    'carSlice/getUserById',
+    async ({id}, {rejectWithValue,dispatch}) => {
+        try {
+
+            const user = await placeholderService.getUserById(id);
+            dispatch(usersItem({user}))
+        } catch (e) {
             return rejectWithValue(e.message)
         }
     }
@@ -17,11 +29,16 @@ export const getAllUsers = createAsyncThunk(
 const userSlice = createSlice({
     name: 'userSlice',
     initialState: {
+        user: undefined,
         users: [],
         status: null,
         error: null,
     },
-    reducers: {},
+    reducers: {
+        usersItem: (state, action) => {
+            state.user={...action.payload.user}
+        }
+    },
     extraReducers: {
         [getAllUsers.pending]: (state) => {
             state.status = 'pending'
@@ -35,10 +52,25 @@ const userSlice = createSlice({
         [getAllUsers.rejected]: (state, action) => {
             state.status = 'rejected'
             state.error = action.payload
+        },
+        [getUserById.pending]: (state) => {
+            state.status = 'pending'
+            state.error = null
+        },
+        [getUserById.fulfilled]: (state, action) => {
+            state.status = 'fulfilled'
+            state.users = action.payload
+            state.error = null
+        },
+        [getUserById.rejected]: (state, action) => {
+            state.status = 'rejected'
+            state.error = action.payload
         }
     }
 });
 
 const userReducer = userSlice.reducer;
+
+export const {usersItem} = userSlice.actions;
 
 export default userReducer;

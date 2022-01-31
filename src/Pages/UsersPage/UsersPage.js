@@ -1,5 +1,6 @@
 import React, {useEffect} from 'react';
 import {useDispatch, useSelector} from "react-redux";
+import {Outlet} from 'react-router-dom'
 
 import {getAllUsers} from "../../store";
 import {User} from "../../components";
@@ -23,7 +24,7 @@ const UsersPage = () => {
             <h2>UsersPage</h2>
             {error && <h2 className={'error'}>{error}</h2>}
             {users.map(user => <User key={user.id} user={user} />)}
-
+            <Outlet/>
         </>
     );
 };

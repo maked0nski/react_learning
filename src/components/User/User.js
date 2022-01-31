@@ -1,19 +1,22 @@
 import React from 'react';
-
-import css from './user.module.css'
 import {Link} from "react-router-dom";
 
-const User = ({user:{id, name, username}}) => {
+import css from './user.module.css'
+import {useDispatch} from "react-redux";
+import {usersItem} from "../../store";
+
+const User = ({user}) => {
+
+    const {id, name, username} = user;
+
+    const dispatch = useDispatch();
 
     return (
         <div className={css.userBlock}>
             <div>{id}) <span>{name}</span>, (username - {username})</div>
-            {/*<div><Link to={id.toString()} state={user}>*/}
-            {/*    <button>Details</button>*/}
-            {/*</Link></div>*/}
-            {/*<div><Link to={id.toString() + '/albums'} state={user}>*/}
-            {/*    <button>Album</button>*/}
-            {/*</Link></div>*/}
+            <div><Link to={id.toString()} state={user}>
+                <button onClick={() =>{dispatch(usersItem({user}))}}>Details</button>
+            </Link></div>
         </div>
     );
 };
