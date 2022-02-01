@@ -8,7 +8,7 @@ import {
     CommentsPageDetails,
     NotFoundPage,
     PostPageDetails,
-    PostsPage,
+    PostsPage, ProductPageDetails, ProductsPage,
     UserPageDetails,
     UsersPage
 } from "./Pages";
@@ -34,6 +34,10 @@ function App() {
                 </Route>
 
                 <Route path={"cars"} element={<CarsPages />} />
+
+                <Route path={"products"} element={<ProductsPage />} >
+                    <Route path={':id'} element={<ProductPageDetails />} />
+                </Route>
 
                 <Route path={"*"} element={<NotFoundPage />} />
             </Route>

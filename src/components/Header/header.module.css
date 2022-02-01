@@ -35,18 +35,21 @@
     /*-webkit-box-reflect:below 1px linear-gradient(transparent, #0005);*/
 }
 .header a:nth-child(1){
-    filter: hue-rotate(90deg);
+    filter: hue-rotate(50deg);
 }
 .header a:nth-child(2){
-    filter: hue-rotate(180deg);
+    filter: hue-rotate(100deg);
 }
 .header a:nth-child(3){
-    filter: hue-rotate(240deg);
+    filter: hue-rotate(150deg);
 }
 .header a:nth-child(4){
-    filter: hue-rotate(260deg);
+    filter: hue-rotate(200deg);
 }
 .header a:nth-child(5){
+    filter: hue-rotate(250deg);
+}
+.header a:nth-child(6){
     filter: hue-rotate(300deg);
 }
 .header a span{
@@ -58,7 +61,7 @@
     left: 0;
     width: 100%;
     height: 2px;
-    background: linear-gradient(90deg,transparent,#03e9f4);
+    background: linear-gradient(50deg,transparent,#03e9f4);
     animation: animate1 1s linear infinite;
 }
 @keyframes animate1{
@@ -74,7 +77,7 @@
     right: 0;
     width: 2px;
     height: 100%;
-    background: linear-gradient(180deg,transparent,#03e9f4);
+    background: linear-gradient(100deg,transparent,#03e9f4);
     animation: animate2 1s linear infinite;
     animation-delay: 0.25s;
 }
@@ -91,7 +94,7 @@
     right: 0;
     width: 100%;
     height: 2px;
-    background: linear-gradient(240deg,transparent,#03e9f4);
+    background: linear-gradient(150deg,transparent,#03e9f4);
     animation: animate3 1s linear infinite;
     animation-delay: 0.50s;
 }
@@ -110,7 +113,7 @@
     left: 0;
     width: 2px;
     height: 100%;
-    background: linear-gradient(260deg,transparent,#03e9f4);
+    background: linear-gradient(200deg,transparent,#03e9f4);
     animation: animate4 1s linear infinite;
     animation-delay: 0.75s;
 }
@@ -128,11 +131,28 @@
     left: 0;
     width: 2px;
     height: 100%;
-    background: linear-gradient(300deg,transparent,#03e9f4);
+    background: linear-gradient(250deg,transparent,#03e9f4);
     animation: animate5 1s linear infinite;
     animation-delay: 0.75s;
 }
 @keyframes animate5{
+    0%{
+        bottom: -100%;
+    }
+    50%,100%{
+        bottom: 100%;
+    }
+}
+.header a span:nth-child(6){
+    bottom: -100%;
+    left: 0;
+    width: 2px;
+    height: 100%;
+    background: linear-gradient(300deg,transparent,#03e9f4);
+    animation: animate6 1s linear infinite;
+    animation-delay: 0.75s;
+}
+@keyframes animate6{
     0%{
         bottom: -100%;
     }

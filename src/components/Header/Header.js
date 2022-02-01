@@ -45,6 +45,14 @@ const Header = () => {
                 <span></span>
                 Cars
             </NavLink>
+
+            <NavLink to='Products'>
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+                Products
+            </NavLink>
         </nav>
     );
 };

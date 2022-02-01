@@ -30,7 +30,6 @@ const userSlice = createSlice({
     initialState: {
         user: undefined,
         users: undefined,
-        // posts: undefined,
         status: null,
         error: null,
     },

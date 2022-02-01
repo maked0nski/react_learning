@@ -5,5 +5,6 @@ export * from './Form/Form';
 export * from './Footer/Footer';
 export * from './Header/Header';
 export * from './Layout/Layout';
-export * from './User/User';
 export * from './Post/Post';
+export * from './Product/Product';
+export * from './User/User';
