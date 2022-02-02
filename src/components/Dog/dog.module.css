@@ -1,0 +1,6 @@
+.nameItem{
+    display: flex;
+}
+.nameItem button{
+    margin-inline: 10px;
+}

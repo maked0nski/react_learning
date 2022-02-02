@@ -1,6 +1,7 @@
+import {useReducer} from "react";
+
 import './App.css';
 import {Cats, Dogs, Form} from "./components";
-import {useReducer} from "react";
 
 const reducer = (state, action) => {
     switch (action.type) {
@@ -11,7 +12,9 @@ const reducer = (state, action) => {
         case 'DEL_CAT':
             return {...state, cats: state.cats.filter(cat => cat.id !== action.payload.id)}
         case 'DEL_DOG':
-            return {...state, dogs: state.dogs.filter(cat => dog.id !== action.payload.id)}
+            return {...state, dogs: state.dogs.filter(dog => dog.id !== action.payload.id)}
+        default :
+            return {...state}
     }
 }
 
@@ -20,12 +23,14 @@ function App() {
 
     const [state, dispatch] = useReducer(reducer, {cats: [], dogs: []});
 
+    const {cats, dogs} = state;
+
     return (
         <>
-            <Form dispatch={dispatch} />
-            <div>
-                <Cats/>
-                <Dogs/>
+            <Form dispatch={dispatch}/>
+            <div className={'names'}>
+                <Cats cats={cats} dispatch={dispatch}/>
+                <Dogs dogs={dogs} dispatch={dispatch}/>
             </div>
         </>
     );

@@ -1,9 +1,12 @@
 import React from 'react';
 
-const Cats = () => {
+import {Cat} from "../Cat/Cat";
+
+const Cats = ({cats , dispatch}) => {
     return (
         <div>
             <h1>Cats</h1>
+            {cats.map(cat => <Cat key={cat.id} cat={cat} dispatch={dispatch}/>)}
         </div>
     );
 };

@@ -1,0 +1,7 @@
+form{
+    text-align: center;
+}
+.names {
+    display: flex;
+    justify-content: space-evenly;
+}
