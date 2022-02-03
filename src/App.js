@@ -14,14 +14,19 @@ function App() {
                 }
 
             case 'DEL_TODO':
-                let indexDEL = state.todo.findIndex(value => value.id === action.payload.id)
-                console.log(indexDEL)
-                console.log(action.payload.id)
-                console.log(state.todo.splice(indexDEL, 1))
+                // debugger
+                // let indexDEL = state.todo.findIndex(value => value.id === action.payload.id)
+                // console.log(indexDEL)
+                // console.log(action.payload.id)
+                // console.log(state.todo.splice(state.todo.findIndex(value => value.id === action.payload.id), 1))
+                //
+                // return {
+                //     ...state, todo: [todo.splice(state.todo.findIndex(value => value.id === action.payload.id), 1)]
+                // }
+
                 return {
-                    ...state,
-                  // todo: [...state.todo.splice(indexDEL, 1)]
-                }
+                    ...state, todo:state.todo.filter(value => value.id !== action.payload.id)                }
+
 
             case 'CHECKED_TODO':
                 let indexCHECKED = state.todo.findIndex(value => value.id === action.payload.id)
