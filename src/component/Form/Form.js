@@ -14,7 +14,7 @@ const Form = ({dispatch}) => {
     return (
         <form onSubmit={handleSubmit(submit)}>
             <input className={'form-control'} {...register('task')} placeholder={'Що запланував?'}/>
-            <button className={'btn btn-primary'}>Save</button>
+            <button className={'btn btn-primary m-3'}>Save</button>
         </form>
     );
 };
