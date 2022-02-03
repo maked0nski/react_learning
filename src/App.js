@@ -37,7 +37,7 @@ function App() {
 
     const [state, dispatch] = useReducer(reducer, {todo: []});
 
-    console.log(state)
+    // console.log(state)
     const {todo} = state;
 
     return (
