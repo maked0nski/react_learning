@@ -1,0 +1,13 @@
+.itemBlock{
+    display: flex;
+    margin-block: 15px;
+}
+.task{
+    margin-inline: 30px;
+    text-decoration: none;
+}
+
+.task1 {
+    margin-inline: 30px;
+    text-decoration: line-through;
+}
