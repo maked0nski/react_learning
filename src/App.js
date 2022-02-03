@@ -2,6 +2,7 @@ import './App.css';
 import {Form} from "./component/Form/Form";
 import {ToDoList} from "./component";
 import {useReducer} from "react";
+import {All} from "./component/All/All";
 
 function App() {
 
@@ -42,8 +43,12 @@ function App() {
 
     return (
         <>
+            <div>
+                <All toto={todo}/>
+            </div>
             <Form dispatch={dispatch}/>
             <ToDoList todo={todo} dispatch={dispatch}/>
+
         </>
     );
 }
